@@ -12,8 +12,7 @@ export class NewsService {
 
   getNews(): Observable<any> {
     let apiUrl = environment.newsApiUrl;
-    apiUrl += "?country=us";
-    apiUrl += "&apiKey=" + environment.newsApiKey;
+    apiUrl += "?api-key=" + environment.newsApiKey;
     return this.httpClient.get(apiUrl).pipe(catchError(NewsService.handleError));
   }
 

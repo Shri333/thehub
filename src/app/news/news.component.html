@@ -4,13 +4,12 @@
   </div>
 </ng-template>
 <div *ngIf="news$ | async as news; else elseTemplate" id="container2">
-  <div *ngFor="let n of news?.articles" id="card"
+  <div *ngFor="let n of news?.response.results" id="card"
   class="uk-card uk-card-default uk-card-hover uk-card-body"
-  (click)="openArticle(n.url)">
+  (click)="openArticle(n.webUrl)">
     <div id="container3">
-      <img [src]="n.urlToImage">
-      <h2>{{ n.title }}</h2>
-      <p>{{ n.description }}</p>
+      <h2>{{ n.webTitle }}</h2>
+      <p>{{ n.type }} - {{ n.sectionName }}</p>
     </div>
   </div>
 </div>
