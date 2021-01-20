@@ -1,0 +1,16 @@
+<ng-template #elseTemplate>
+  <div id="container">
+    <strong uk-spinner="ratio: 2"></strong>
+  </div>
+</ng-template>
+<div *ngIf="news$ | async as news; else elseTemplate" id="container2">
+  <div *ngFor="let n of news?.articles" id="card"
+  class="uk-card uk-card-default uk-card-hover uk-card-body"
+  (click)="openArticle(n.url)">
+    <div id="container3">
+      <img [src]="n.urlToImage">
+      <h2>{{ n.title }}</h2>
+      <p>{{ n.description }}</p>
+    </div>
+  </div>
+</div>

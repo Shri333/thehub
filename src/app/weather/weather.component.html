@@ -1,0 +1,39 @@
+<ng-template #elseTemplate>
+  <div id="container">
+    <strong uk-spinner="ratio: 2"></strong>
+  </div>
+</ng-template>
+<div *ngIf="weather$ | async as weather; else elseTemplate" id="container2">
+  <div *ngFor="let w of weather?.daily" id="card"
+  class="uk-card uk-card-default uk-card-body">
+    <div id="header">
+      <h3 id="day"class="uk-card-title">{{ getDate(w.dt) }}</h3>
+      <img src="http://openweathermap.org/img/wn/{{w.weather[0].icon}}@2x.png">
+    </div>
+    <div id="body">
+      <div id="text-container">
+        <p>{{ w.weather[0].main }} ({{ w.weather[0].description }})</p>
+      </div>
+      <hr>
+      <div id="text-container">
+        <p id="text">Day temperature: {{ w.temp.day }} °F (feels like: {{ w.feels_like.day }} °F)</p>
+        <p id="text">Night temperature: {{ w.temp.night }} °F (feels like: {{ w.feels_like.night }} °F)</p>
+      </div>
+      <div id="text-container">
+        <p id="text">Morning temperature: {{ w.temp.morn }} °F (feels like: {{ w.feels_like.morn }} °F)</p>
+        <p id="text">Evening temperature: {{ w.temp.eve }} °F (feels like: {{ w.feels_like.eve }} °F)</p>
+      </div>
+      <hr>
+      <div id="text-container">
+        <p id="text">Pressure: {{ w.pressure }} hPa</p>
+        <p id="text">Humidity: {{ w.humidity }}%</p>
+        <p id="text">Dew point: {{ w.dew_point }} °F</p>
+      </div>
+      <div id="text-container">
+        <p id="text">Wind speed: {{ w.wind_speed }} miles/hour</p>
+        <p id="text">Cloudiness: {{ w.clouds }}%</p>
+        <p id="text">Precipitation: {{ w.pop * 100 }}%</p>
+      </div>
+    </div>
+  </div>
+</div>

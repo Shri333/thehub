@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+strong {
+  color: #f4546c;
+}
+
+div#container {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+
+div#container2 {
+  margin: auto;
+  width: 80vw;
+}
+
+div#card {
+  margin-bottom: 20px;
+}
+
+div#card:hover {
+  cursor: pointer;
+}
+
+div#container3 {
+  padding: 10px;
+}
+
+img {
+  margin-bottom: 10px;
+}
+

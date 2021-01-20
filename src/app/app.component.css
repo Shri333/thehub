@@ -1,0 +1,21 @@
+nav.uk-navbar-container {
+  background-color: #f4546c;
+  margin-bottom: 50px;
+}
+
+a#brand {
+  color: white;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+button.uk-button {
+  border: 1px solid white;
+  background-color: #f4546c;
+  color: white; 
+}
+
+button.uk-button:hover {
+  background-color: #f73d59;
+}
+
